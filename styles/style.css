@@ -1,0 +1,34 @@
+body {
+    background-image: url('../img/Biblio.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+/*nav a{
+    text-align: center;
+    color: white;
+}
+nav a: hover{
+    font-size: 150%;
+    font-weight: bold;
+    background-color: gold;
+}
+table,
+td  {
+    border: 1px solid white;
+}
+
+table,
+th  {
+    border: 1px solid white;
+}
+table,
+tr {
+    color: white;
+    font-weight: bold;
+    border: 1px solid black;
+}
+table thead {
+    color: white;
+    background-color: red;
+}*/

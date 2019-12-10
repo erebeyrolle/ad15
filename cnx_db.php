@@ -5,10 +5,10 @@ define('USER','root');
 define('PASSWORD','1604');
 define('CHARSET','charset=utf-8');
 
-function ConnectDB()
+function connectDB()
 {
-    $DataBase = new PDO(DSN,USER,PASSWORD);
-    $DataBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    return $DataBase;
+    $dataBase = new PDO(DSN,USER,PASSWORD);
+    $dataBase->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $dataBase;
 }
 ?>

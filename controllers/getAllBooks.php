@@ -1,12 +1,12 @@
 <?php
-
-/* On crée une fonction qui va récupérer notre DB : biblio avec pour arguments:
-Le nom de la DB, le User Name 'root' et le mot de passe '0000'*/
+session_start();
+include_once("./loaderBooks.php");
+/* On crée une fonction qui va récupérer notre DB : library avec pour arguments:
+Le nom de la DB, le User Name 'root' et le mot de passe '1604'*/
 
 function getAllBooks() {
-    $connec = new PDO('mysql:dbname=biblio','root','0000');
-    $connec->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $request = $connec->prepare('SELECT * FROM books;');
+    $dataBase = connectDB();
+    $request = $dataBase->prepare('SELECT * FROM books;');
     $request->execute();
     return $request->fetchAll(PDO::FETCH_ASSOC);
 }

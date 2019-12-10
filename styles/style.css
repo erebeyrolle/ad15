@@ -1,9 +1,14 @@
 body {
-    background-image: url('../img/Biblio.jpg');
+    /*background-image: url('../img/Biblio.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
+    background: grey;
     }
-
+h1 {text-align: center;
+    color: black;
+    font-size: 4rem;
+    font-weight: 900;
+}
 /*nav a{
     text-align: center;
     color: white;
@@ -12,7 +17,7 @@ nav a: hover{
     font-size: 150%;
     font-weight: bold;
     background-color: gold;
-}
+}*/
 table,
 td  {
     border: 1px solid white;
@@ -20,15 +25,16 @@ td  {
 
 table,
 th  {
+    text-align: center;
     border: 1px solid white;
 }
 table,
 tr {
-    color: white;
+    color: black;
     font-weight: bold;
     border: 1px solid black;
 }
 table thead {
-    color: white;
-    background-color: red;
-}*/
+    color: black;
+    background-color: rgb(228, 88, 88);
+}

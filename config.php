@@ -3,10 +3,10 @@ session_start();
 
 // Définition constantes titre pages
 define ('TITLE', 'Accueil Bibliothèque'); // constante titre page Accueil
-define ('TITLE1', 'Connexion'); // Constante titre page Connexion
-define ('TITLE2', 'Participation'); // Constante titre page formulaire participation
-define ('TITLE3', 'Connexion'); // Constante titre page formulaire connexion
-define ('TITLE4', 'Compte'); // Constante titre page formulaire compte
+define ('TITLE1', 'Connexion'); // Constante titre onglet page Connexion
+define ('TITLE2', 'Participation'); // Constante titre onglet page formulaire participation
+define ('TITLE3', 'Modification Livre'); // Constante titre onglet page modification données livres
+define ('TITLE4', 'Suppression Livre'); // Constante titre onglet page suppression de livres
 
 function test_input($data){
     $data = trim($data);

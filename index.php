@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("./config.php");
+include_once('./controllers/getAllBooks.php');
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,45 @@ include_once("./config.php");
     
     <body>
         <h1>Bienvenue sur la page d'accueil de ma bibliothèque</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="6">Ma Bibliothèque Personnelle</th>
+                </tr>
+                <tr>
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th>Résumé</th>
+                    <th>Date achat</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+             </tr>
+             </thead>
 
+    <?php foreach ($books as $key => $book): ?>
+        <tbody>           
+        <tr>              
+            <td><?php echo $book['title']; ?></td>
+            <td><?php echo $book['author']; ?></td>
+            <td><?php echo $book['summary']; ?></td>
+            <td><?php echo $book['entry_date']; ?></td>
+            <td>
+                <form action="./updateBook.php" method="POST">
+                    <input type="hidden" name="id" value=<?php echo $book['id'] ?> >
+                    <input type="submit" value="Update" >
+                </form> 
+            </td>  
+
+            <td>
+                <form action="./controllers/deleteOneBook.php" method="POST">
+                    <input type="hidden" name="id" value=<?php echo $book['id'] ?> >
+                    <input type="submit" value="Delete">
+                </form> 
+            </td>    
+        </tr>
+        </tbody>
+<?php endforeach; ?>
+    </table>
 
 
         

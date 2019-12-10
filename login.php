@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once("./config.php"); 
+require_once("./config/"); 
 ?>
 
 <html lang="fr">

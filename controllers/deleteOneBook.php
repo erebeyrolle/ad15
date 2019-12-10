@@ -1,4 +1,6 @@
 <?php
+session_start();
+require_once("../config/loaderBooks.php");
 // var_dump($_POST);
 $id = $_POST['id'];
 

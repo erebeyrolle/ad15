@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('./controllers/getAllBooks.php');
+require_once('../controllers/getAllBooks.php');
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +47,7 @@ include_once('./controllers/getAllBooks.php');
             </td>  
 
             <td>
-                <form action="./controllers/deleteOneBook.php" method="POST">
+                <form action="../controllers/deleteOneBook.php" method="POST">
                     <input type="hidden" name="id" value=<?php echo $book['id'] ?> >
                     <input type="submit" value="Delete">
                 </form> 

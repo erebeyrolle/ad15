@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("./loaderBooks.php");
+require_once("../config/loaderBooks.php");
 /* On crée une fonction qui va récupérer notre DB : library avec pour arguments:
 Le nom de la DB, le User Name 'root' et le mot de passe '1604'*/
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../loaderBooks.php");
+require_once('config/loaderBooks.php');
 
 $id = test_input($_POST['id']);
 $title = test_input($_POST['title']);

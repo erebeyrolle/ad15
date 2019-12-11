@@ -1,11 +1,13 @@
 <?php
+session_start();
+require_once('config/loaderBooks.php');
 
-$id = $_POST['id'];
+$id = test_input($_POST['id']);
 
 function getOneBook($id) {
-    $connec = new PDO('mysql:dbname=biblio','root','0000');
-    $connec->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $request = $connec->prepare("SELECT * FROM books WHERE id='$id';");
+    $dataBase = connectDB();
+    $request = $dataBase->prepare(" SELECT * FROM books
+                                    WHERE id='$id';");
     $request->execute();
     return $request->fetchAll(PDO::FETCH_ASSOC);
 }

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../config/loaderBooks.php");
+require_once('config/loaderBooks.php');
 ?>
 
 <!DOCTYPE html>
@@ -8,13 +8,13 @@ require_once("../config/loaderBooks.php");
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nouveau Livre</title>
+    <title><?= constant("TITLE4"); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="main.js"></script>
 </head>
 <body>
-    <form action="controllers/createBook.php" method="POST">
+    <form action="controllers/createOneBook.php" method="POST">
         <label for="title">Titre</label>
         <input type="text" name="title" placeholder="Titre">
 
@@ -22,6 +22,7 @@ require_once("../config/loaderBooks.php");
         <input type="text" name="author" placeholder="Auteur"> 
 
         <label for="summary">Résumé</label>
+        
         <input type="text" name="summary" placeholder="Résumé">
 
         <input type="submit" value="Valider"> 

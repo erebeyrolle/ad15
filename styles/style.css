@@ -4,7 +4,9 @@ body {
     background-size: cover;*/
     background: grey;
     }
-h1 {text-align: center;
+h1 {
+    background: wheat;
+    text-align: center;
     color: black;
     font-size: 4rem;
     font-weight: 900;

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../config/loaderBooks.php");
+require_once('../config/loaderBooks.php');
 
 $title = test_input($_POST['title']);
 $author = test_input($_POST['author']);

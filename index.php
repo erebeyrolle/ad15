@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('config/loaderBooks.php');
+require_once('login.php')
 ?>
 
 <!DOCTYPE html>

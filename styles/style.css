@@ -40,3 +40,18 @@ table thead {
     color: black;
     background-color: rgb(228, 88, 88);
 }
+.none {
+    display: none;
+}
+.success{
+    text-align: center;
+    color: wheat;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+.error{
+    text-align: center;
+    color: red;
+    font-weight: bolder;
+    font-size: 2rem;
+}

@@ -23,12 +23,13 @@ require_once('controllers/getOneBook.php');
         <table>
             <thead>
                 <tr>
-                    <th colspan="5">Ma Bibliothèque Personnelle</th>
+                    <th colspan="6">Ma Bibliothèque Personnelle</th>
                 </tr>
                 <tr>
                     <th>Titre</th>
                     <th>Auteur</th>
                     <th>Résumé</th>
+                    <th>Prix</th>
                     <th>Date achat</th>
                     <th>Retour</th>
                 </tr>
@@ -40,6 +41,7 @@ require_once('controllers/getOneBook.php');
             <td><?php echo $book['title']; ?></td>
             <td><?php echo $book['author']; ?></td>
             <td><?php echo $book['summary']; ?></td>
+            <td><?php echo $book['price']; ?></td>
             <td><?php echo $book['entry_date']; ?></td>
             <td><button><a href="allBooks.php">Bibliothèque</a></button> </td>
                 

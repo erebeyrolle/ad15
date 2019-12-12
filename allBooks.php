@@ -18,19 +18,27 @@ $admin = 1;
     </head>
     
     <body>
+        
         <header>
             <h1><?= constant("HEADING1"); ?></h1>
         </header>
+        <div class="success">
+        <?php if (isset($_GET['update']))
+        {
+            echo "Modification effectuée";
+        }?>
+        </div>
         <table>
             <thead>
                 <tr>
-                    <th colspan="7">Ma Bibliothèque Personnelle</th>
+                    <th colspan="8">Ma Bibliothèque Personnelle</th>
                 </tr>
     <?php if ($admin){ ?>
                 <tr>
                     <th>Titre</th>
                     <th>Auteur</th>
                     <th>Résumé</th>
+                    <th>Prix</th>
                     <th>Date achat</th>
                     <th>Voir ce livre</th>             
                     <th>Update</th>
@@ -41,6 +49,7 @@ $admin = 1;
                     <th>Titre</th>
                     <th>Auteur</th>
                     <th>Résumé</th>
+                    <th>Prix</th>
                     <th>Date achat</th>
                     <th>Voir ce livre</th> 
         </tr>
@@ -54,6 +63,7 @@ $admin = 1;
             <td><?php echo $book['title']; ?></td>
             <td><?php echo $book['author']; ?></td>
             <td><?php echo $book['summary']; ?></td>
+            <td><?php echo $book['price']; ?></td>
             <td><?php echo $book['entry_date']; ?></td>
             <td>
                 <form action="oneBook.php" method="POST">
@@ -62,10 +72,7 @@ $admin = 1;
                 </form> 
             </td>
             <td>
-                <form action="updateBook.php" method="POST">
-                    <input type="hidden" name="id" value=<?php echo $book['id'] ?> >
-                    <input type="submit" value="Update" >
-                </form> 
+                <button><a href="updateBook.php?id=<?php echo $book['id']?>&title=<?php echo $book['title']?>&author=<?php echo $book['author']?>&summary=<?php echo $book['summary']?>&price=<?php echo $book['price']?>&entry_date=<?php echo $book['entry_date']?>"> Update</a></button>
             </td>  
 
             <td>
@@ -80,6 +87,7 @@ $admin = 1;
             <td><?php echo $book['title']; ?></td>
             <td><?php echo $book['author']; ?></td>
             <td><?php echo $book['summary']; ?></td>
+            <td><?php echo $book['price']; ?></td>
             <td><?php echo $book['entry_date']; ?></td>
             <td>
                 <form action="oneBook.php" method="POST">

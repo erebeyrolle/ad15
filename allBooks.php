@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once("config/loaderBooks.php");
-require_once('controllers/getAllBooks.php');
-$admin = 1;
+require_once('controllersBooks/getAllBooks.php');
+;
 ?>
 
 <!DOCTYPE html>
@@ -21,11 +21,16 @@ $admin = 1;
         
         <header>
             <h1><?= constant("HEADING1"); ?></h1>
+            <button type="button"><a href="logout.php">Se déconnecter</a></button>
         </header>
         <div class="success">
         <?php if (isset($_GET['update']))
         {
             echo "Modification effectuée";
+        }
+        else if (isset($_GET['delete']))
+        {
+            echo "Suppression effectuée";
         }?>
         </div>
         <table>
@@ -33,7 +38,7 @@ $admin = 1;
                 <tr>
                     <th colspan="8">Ma Bibliothèque Personnelle</th>
                 </tr>
-    <?php if ($admin){ ?>
+    <?php if (isset($_SESSION['login']) && ($_SESSION['login']) == 1){ ?>
                 <tr>
                     <th>Titre</th>
                     <th>Auteur</th>
@@ -58,7 +63,7 @@ $admin = 1;
 
     <?php foreach ($books as $key => $book): ?>
         <tbody> 
-        <?php if ($admin){ ?>          
+        <?php if (isset($_SESSION['login']) && ($_SESSION['login']) == 1){ ?>          
         <tr>              
             <td><?php echo $book['title']; ?></td>
             <td><?php echo $book['author']; ?></td>
@@ -67,17 +72,17 @@ $admin = 1;
             <td><?php echo $book['entry_date']; ?></td>
             <td>
                 <form action="oneBook.php" method="POST">
-                    <input type="hidden" name="id" value=<?php echo $book['id'] ?> >
+                    <input type="hidden" name="book_id" value=<?php echo $book['book_id'] ?> >
                     <input type="submit" value="Voir" >
                 </form> 
             </td>
             <td>
-                <button><a href="updateBook.php?id=<?php echo $book['id']?>&title=<?php echo $book['title']?>&author=<?php echo $book['author']?>&summary=<?php echo $book['summary']?>&price=<?php echo $book['price']?>&entry_date=<?php echo $book['entry_date']?>"> Update</a></button>
+                <button><a href="updateBook.php?book_id=<?php echo $book['book_id']?>&title=<?php echo $book['title']?>&author=<?php echo $book['author']?>&summary=<?php echo $book['summary']?>&price=<?php echo $book['price']?>&entry_date=<?php echo $book['entry_date']?>">Update</a></button>
             </td>  
 
             <td>
-                <form action="controllers/deleteOneBook.php" method="POST">
-                    <input type="hidden" name="id" value=<?php echo $book['id'] ?> >
+                <form action="controllersBooks/deleteOneBook.php" method="POST">
+                    <input type="hidden" name="book_id" value=<?php echo $book['book_id'] ?> >
                     <input type="submit" value="Delete">
                 </form> 
             </td>    
@@ -91,7 +96,7 @@ $admin = 1;
             <td><?php echo $book['entry_date']; ?></td>
             <td>
                 <form action="oneBook.php" method="POST">
-                    <input type="hidden" name="id" value=<?php echo $book['id'] ?> >
+                    <input type="hidden" name="book_id" value=<?php echo $book['book_id'] ?> >
                     <input type="submit" value="Voir" >
                 </form> 
             </td>

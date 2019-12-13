@@ -12,12 +12,12 @@ require_once('config/loaderBooks.php');
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
         crossorigin="anonymous">
         <link rel="stylesheet" href="styles/style.css">
-    <title><?= constant("TITLE5"); ?></title>
+    <title><?= constant("TITLE11"); ?></title>
 </head>
 
 <body>
     <header>
-            <h1><?= constant("HEADING5"); ?></h1>
+            <h1><?= constant("HEADING11"); ?></h1>
             <button type="button"><a href="logout.php">Se déconnecter</a></button>
         </header>
         <div class="error">
@@ -29,40 +29,31 @@ require_once('config/loaderBooks.php');
         <table>
             <thead>
                 <tr>
-                    <th colspan="7">Ma Bibliothèque Personnelle</th>
+                    <th colspan="5">Modifier un utilisateur enregistré</th>
                 </tr>
                 <tr>
-                    <th>Titre</th>
-                    <th>Auteur</th>
-                    <th>Résumé</th>
-                    <th>Prix</th>
-                    <th>Date achat</th>
+                    <th>Identifiant</th>
+                    <th>Mot de passe</th>
+                    <th>Type utilisateur</th>
                     <th>Validation</th>
                     <th>Retour</th>
                 </tr>
              </thead>
-    <form action="controllersBooks/updateOneBook.php" method="POST">
+    <form action="controllersUsers/updateOneUser.php" method="POST">
     <tbody>           
         <tr>  
-        <td class="none"><input type="text" name="book_id" value="<?php echo $_GET['book_id']?>"></td>   
+        <td class="none"><input type="text" name="user_id" value="<?php echo $_GET['user_id']?>"></td>   
        
-
-        <!--<label for="title">Titre</label>-->
-        <td><input type="text" name="title" value="<?php echo $_GET['title']?>"></td>
-
-        <!--<label for="author">Auteur</label>-->
-        <td><input type="text" name="author" value="<?php echo $_GET['author']?>"></td>
-
-        <!--<label for="summary">Résumé</label>-->
-        <td><input type="text" name="summary" value="<?php echo $_GET['summary']?>"></td>
-
-        <td><input type="text" name="price" value="<?php echo $_GET['price']?>"></td>        
-
-        <td><?php echo $_GET['entry_date']?>"</td>
+        <td><input type="text" name="login" value="<?php echo $_GET['login']?>"></td>
+   
+        <td><input type="text" name="pswd" value="<?php echo $_GET['pswd']?>"></td>
+  
+        <td><input type="text" name="admin" value="<?php if ($_GET['admin'] == 1)
+            {echo "Administrateur";}else{echo"Utilisateur";}; ?>"></td>       
 
         <td><input type="submit" value="Valider"></td>
 
-        <td><button><a href="allBooks.php">Bibliothèque</a></button> </td>
+        <td><button><a href="allUsers.php">Liste utilisateurs</a></button> </td>
         
         </tr>
         </tbody>

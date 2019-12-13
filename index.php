@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('config/loaderBooks.php');
-require_once('login.php')
+
 ?>
 
 <!DOCTYPE html>
@@ -15,26 +15,38 @@ require_once('login.php')
         <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
     </head>
 
-    <body>
+    <body class="users">
         <header>
             <h1><?= constant("HEADING"); ?></h1>
         </header>
 
-        <div class="container   border border-dark rounded-lg ">    
-            <form >
-                
-                <div class="form-group">
-                    <label for="login" class="font-weight-bold">Entrez votre identifiant</label>
-                    <input type="text" class="form-control w-25 p-3" id="login" placeholder="Votre identifiant de connexion">
+        <div class="container my-auto bg-light border border-dark border-lg rounded-lg">    
+            <form class="" action="login.php" method="POST">
+                <div class="form-group row">
+                    <label for="login" class="col-sm-3 col-form-label mx-auto font-weight-bold">Entrez votre identifiant</label>
+                    <div class="col-sm-12">
+                    <input type="text" class="form-control w-25 p-3 mx-auto" name="login" placeholder="Votre identifiant de connexion">
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="pswd" class="font-weight-bold">Entrez votre mot de passe</label>
-                    <input type="password" class="form-control w-25 p-3" id="pswd" placeholder="Votre mot de passe de connexion">
+                <div class="form-group row">
+                    <label for="pswd" class="col-sm-3 col-form-label mx-auto font-weight-bold">Entrez votre mot de passe</label>
+                    <div class="col-sm-12">
+                    <input type="password" class="form-control w-25 p-3 mx-auto" name="pswd" placeholder="Votre mot de passe de connexion">
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Valider</button>
+                <div class="form-group row">
+                    <div class="col-sm-20 mx-auto">
+                    <button type="submit" class="btn btn-primary mx-auto">Valider</button>
+                </div>
+                </div>
             </form>
         </div>
+        <div class="success">
+        <?php if (isset($_GET['bye']))
+        {
+            echo "Au revoir";
+        }?>
+    </div>
 
 
 

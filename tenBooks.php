@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('config/loaderBooks.php');
-require_once('controllers/getTenBooks.php');
+require_once('controllersBooks/getTenBooks.php');
 
 
 ?>
@@ -21,6 +21,7 @@ require_once('controllers/getTenBooks.php');
     <body>
         <header>
             <h1><?= constant("HEADING2"); ?></h1>
+            <button type="button"><a href="logout.php">Se déconnecter</a></button>
         </header>
         <table>
             <thead>
